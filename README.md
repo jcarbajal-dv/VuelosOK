@@ -35,6 +35,7 @@ erDiagram
     VUELOS ||--o{ PASSENGERS : tiene
     AEROPUERTOS ||--o{ VUELOS : opera
     PERSONA ||--o{ PASSENGERS : viaja
+```
 
 ## Diccionario de Datos
 
