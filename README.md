@@ -8,28 +8,28 @@ Este archivo describe la estructura de las tablas de la base de datos de gestió
 erDiagram
     VUELOS {
         int id
-        string origen
-        string destino
+        VARCHAR(20) origen
+        VARCHAR(20) destino
         int duracion
     }
 
     PERSONA {
         int id
-        string nombre
-        string apellido
+        VARCHAR(32) nombre
+        VARCHAR(32) apellido
     }
 
     PASSENGERS {
         int id
-        string nombre
-        string apellido
+        VARCHAR(32) nombre
+        VARCHAR(32) apellido
         int vuelo_id
     }
 
     AEROPUERTOS {
         int id
-        string code
-        string city
+        VARCHAR(3) code
+        VARCHAR(20) city
     }
 
     VUELOS ||--o{ PASSENGERS : "tiene"
