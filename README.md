@@ -23,7 +23,7 @@ erDiagram
         int id
         string nombre
         string apellido
-        int fk_vuelo
+        int vuelo_id
     }
 
     AEROPUERTOS {
@@ -46,10 +46,10 @@ Esta tabla almacena información sobre los vuelos disponibles, incluyendo el ori
 
 | Campo       | Tipo de Dato | Descripción                                             |
 |-------------|--------------|---------------------------------------------------------|
-| `id`        | Integer      | Identificador único del vuelo (clave primaria).         |
-| `origen`    | String       | Nombre de la ciudad de origen del vuelo.                |
-| `destino`   | String       | Nombre de la ciudad de destino del vuelo.               |
-| `duracion`  | Integer      | Duración del vuelo en minutos.                          |
+| `id`        | int      | Identificador único del vuelo (clave primaria).         |
+| `origen`    | VARCHAR(20)       | Nombre de la ciudad de origen del vuelo.                |
+| `destino`   | VARCHAR(20)       | Nombre de la ciudad de destino del vuelo.               |
+| `duracion`  | int      | Duración del vuelo en minutos.                          |
 
 ### Tabla: `PERSONA`
 
@@ -57,9 +57,9 @@ Esta tabla almacena información sobre las personas registradas en el sistema.
 
 | Campo       | Tipo de Dato | Descripción                                             |
 |-------------|--------------|---------------------------------------------------------|
-| `id`        | Integer      | Identificador único de la persona (clave primaria).     |
-| `nombre`    | String       | Nombre de la persona.                                   |
-| `apellido`  | String       | Apellido de la persona.                                 |
+| `id`        | int      | Identificador único de la persona (clave primaria).     |
+| `nombre`    | VARCHAR(32)       | Nombre de la persona.                                   |
+| `apellido`  | VARCHAR(32)       | Apellido de la persona.                                 |
 
 ### Tabla: `PASSENGERS`
 
@@ -67,10 +67,10 @@ Esta tabla representa a los pasajeros que están asociados a un vuelo específic
 
 | Campo       | Tipo de Dato | Descripción                                             |
 |-------------|--------------|---------------------------------------------------------|
-| `id`        | Integer      | Identificador único del pasajero (clave primaria).      |
-| `nombre`    | String       | Nombre del pasajero.                                    |
-| `apellido`  | String       | Apellido del pasajero.                                  |
-| `fk_vuelo`  | Integer      | ID del vuelo en el que viaja el pasajero (clave foránea, referencia a `VUELOS.id`). |
+| `id`        | int      | Identificador único del pasajero (clave primaria).      |
+| `nombre`    | VARCHAR(32)       | Nombre del pasajero.                                    |
+| `apellido`  | VARCHAR(32)      | Apellido del pasajero.                                  |
+| `vuelo_id`  | int      | ID del vuelo en el que viaja el pasajero (clave foránea, referencia a `VUELOS.id`). |
 
 ### Tabla: `AEROPUERTOS`
 
@@ -78,6 +78,6 @@ Esta tabla contiene información sobre los aeropuertos operativos en el sistema.
 
 | Campo       | Tipo de Dato | Descripción                                             |
 |-------------|--------------|---------------------------------------------------------|
-| `id`        | Integer      | Identificador único del aeropuerto (clave primaria).    |
-| `code`      | String       | Código IATA del aeropuerto (tres letras).               |
-| `city`      | String       | Ciudad a la que pertenece el aeropuerto.                |
+| `id`        | int      | Identificador único del aeropuerto (clave primaria).    |
+| `code`      | VARCHAR(3)       | Código IATA del aeropuerto (tres letras).               |
+| `city`      | VARCHAR(20)       | Ciudad a la que pertenece el aeropuerto.                |
