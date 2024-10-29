@@ -7,34 +7,35 @@ Este archivo describe la estructura de las tablas de la base de datos de gestió
 ```mermaid
 erDiagram
     VUELOS {
-        int id PK
+        int id
         string origen
         string destino
         int duracion
     }
 
     PERSONA {
-        int id PK
+        int id
         string nombre
         string apellido
     }
 
     PASSENGERS {
-        int id PK
+        int id
         string nombre
         string apellido
-        int fk_vuelo FK
+        int fk_vuelo
     }
 
     AEROPUERTOS {
-        int id PK
+        int id
         string code
         string city
     }
 
-    VUELOS ||--o{ PASSENGERS : tiene
-    AEROPUERTOS ||--o{ VUELOS : opera
-    PERSONA ||--o{ PASSENGERS : viaja
+    VUELOS ||--o{ PASSENGERS : "tiene"
+    AEROPUERTOS ||--o{ VUELOS : "opera"
+    PERSONA ||--o{ PASSENGERS : "viaja"
+
 ```
 
 ## Diccionario de Datos
